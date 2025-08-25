@@ -1,0 +1,75 @@
+function BrandsProduct() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-200 py-16">
+      <div className="text-center max-w-6xl px-4 w-full">
+        <span className="inline-block bg-gray-100 text-gray-500 text-sm px-3 py-1 rounded-full mb-4">
+          Premium Brands
+        </span>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          World-Class Bathroom Brands
+        </h1>
+        <p className="text-gray-600 mb-8">
+          Partner with the most trusted names in luxury bathroom accessories.
+          Each brand brings decades of innovation and craftsmanship to your space.
+        </p>
+
+        {/* Cards in one row, no scroll */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              name: 'Jaguar',
+              products: '200+',
+              desc: 'Premium bathroom solutions with innovative design and superior craftsmanship',
+              rating: 4.9,
+            },
+            {
+              name: 'Kohler',
+              products: '150+',
+              desc: 'Bold design and unmatched durability for the modern bathroom',
+              rating: 4.8,
+            },
+            {
+              name: 'Hindware',
+              products: '120+',
+              desc: 'Trusted quality and elegant designs for every home',
+              rating: 4.7,
+            },
+            {
+              name: 'KIDLEN',
+              products: '80+',
+              desc: 'Contemporary luxury with cutting-edge technology',
+              rating: 4.6,
+            },
+          ].map((brand, index) => (
+            <div
+              key={index}
+              className="bg-white p-4 rounded-lg shadow-md text-left"
+            >
+              <div className="w-full h-24 bg-gray-300 mb-3 rounded-md"></div>
+              <h2 className="text-lg font-semibold text-gray-800 mb-1">{brand.name}</h2>
+              <div className="text-gray-500 text-sm mb-2 flex items-center">
+                <span className="inline-flex items-center bg-yellow-300 text-yellow-800 text-xs px-2 py-1 rounded-full mr-2">
+                  ★ {brand.rating}
+                </span>
+                {brand.products}
+              </div>
+              <p className="text-gray-600 text-sm mb-3">{brand.desc}</p>
+              <a
+                href="#"
+                className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
+              >
+                Explore {brand.name} →
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <button className="mt-8 px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
+          View All Brands →
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default BrandsProduct;
