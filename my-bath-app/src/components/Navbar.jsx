@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { ShoppingCart, User, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import '../pages/Login';
+import '../pages/Brands/Hindware';
+import '../pages/Brands/Jaquar';
+import '../pages/Brands/Kidlen';
+import '../pages/Brands/Kohler';
+import '../pages/About'; 
+
 
 const Navbar = () => {
   const [brandsOpen, setBrandsOpen] = useState(false);
@@ -40,8 +46,8 @@ const Navbar = () => {
               <Link to="/brands/KIDLEN" className="block px-4 py-2 hover:bg-gray-100">
                   KIDLEN
                 </Link>
-                <Link to="/brands/Plumber" className="block px-4 py-2 hover:bg-gray-100">
-                  Plumber
+                <Link to="/brands/Kohler" className="block px-4 py-2 hover:bg-gray-100">
+                  Kohler
                 </Link>
               </div>
             )}

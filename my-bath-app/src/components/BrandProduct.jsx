@@ -13,7 +13,6 @@ function BrandsProduct() {
           Each brand brings decades of innovation and craftsmanship to your space.
         </p>
 
-        {/* Cards in one row, no scroll */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
@@ -21,31 +20,39 @@ function BrandsProduct() {
               products: '200+',
               desc: 'Premium bathroom solutions with innovative design and superior craftsmanship',
               rating: 4.9,
+              img: '/images/jaguar_logo.png', // Path relative to public folder
             },
             {
               name: 'Kohler',
               products: '150+',
               desc: 'Bold design and unmatched durability for the modern bathroom',
               rating: 4.8,
+              img: '/images/kohler_logo.png', // Ensure this file exists
             },
             {
               name: 'Hindware',
               products: '120+',
               desc: 'Trusted quality and elegant designs for every home',
               rating: 4.7,
+              img: '/images/hindwar_logo.png', // Ensure this file exists
             },
             {
               name: 'KIDLEN',
               products: '80+',
               desc: 'Contemporary luxury with cutting-edge technology',
               rating: 4.6,
+              img: '/images/kidlen_logo.jpg', // Ensure this file exists
             },
           ].map((brand, index) => (
             <div
               key={index}
               className="bg-white p-4 rounded-lg shadow-md text-left"
             >
-              <div className="w-full h-24 bg-gray-300 mb-3 rounded-md"></div>
+              <img
+                src={brand.img}
+                alt={`${brand.name} logo`}
+                className="w-full h-24 object-contain mb-3 rounded-md"
+              />
               <h2 className="text-lg font-semibold text-gray-800 mb-1">{brand.name}</h2>
               <div className="text-gray-500 text-sm mb-2 flex items-center">
                 <span className="inline-flex items-center bg-yellow-300 text-yellow-800 text-xs px-2 py-1 rounded-full mr-2">
