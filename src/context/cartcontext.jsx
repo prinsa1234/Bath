@@ -30,11 +30,15 @@ export function CartProvider({ children }) {
       )
     );
   };
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity ,clearCart }}>
       {children}
     </CartContext.Provider>
+    
   );
 }
 

@@ -1,15 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cartcontext.jsx'; // Adjust path based on your structure
 
 const Checkout = () => {
   const { cartItems } = useCart() || {}; // Fetch cart items from context
+  const navigate = useNavigate();
 
   // Calculate subtotal, GST, and total
   const subtotal = cartItems.reduce((sum, item) => sum + item.discountPrice * item.quantity, 0);
   const gst = subtotal * 0.18; // 18% GST
   const deliveryFee = 0; // Free delivery
   const total = subtotal + gst + deliveryFee;
+  const handleContinueToPayment = () => {
+    navigate('/payment');
+  };
 
   return (
     <div className="min-h-screen bg-[#e8ecef] text-[#607d9e] p-6">
@@ -93,9 +97,12 @@ const Checkout = () => {
             <p className="text-[#84a4bc] text-sm mb-4">
               Free delivery on orders above ₹5,000
             </p>
-            <button className="w-full bg-[#607d9e] text-white py-3 rounded-lg hover:bg-[#84a4bc] transition">
-              Continue to Payment
-            </button>
+           <button 
+          onClick={handleContinueToPayment}
+          className="w-full bg-[#607d9e] text-white py-3 rounded-lg hover:bg-[#84a4bc] transition"
+        >
+          Continue to Payment
+        </button>
           </div>
         </div>
       </div>

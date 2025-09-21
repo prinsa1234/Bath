@@ -11,6 +11,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Payment from './pages/Payment';
+import Confirmation from './pages/Confirmation';
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
     </>
   );
